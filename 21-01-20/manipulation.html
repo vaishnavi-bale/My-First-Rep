@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>paragraph one</p>
+    <div contenteditable=true>hello</div>
+    <div>vish</div>
+    <p>paragraph two</p>
+    <v>vaish</v>
+    <div><strong>hhii</strong></div>
+    <div>div one</div>
+    <p>paragraph three</p>
+    <em1>vaishu</em1>
+    <div>div two</div>
+    <button>Click Me</button>
+    <table></table>
+    <script>
+     var divs = document.querySelectorAll('p');
+     for(let d of divs){
+         d.style.color='red';
+         d.style.fontSize='30px'
+     }
+     var firstDiv = document.querySelector('div');
+        firstDiv.style.color = 'red';
+        firstDiv.style.fontSize = '50px';
+     var btn = document.querySelector('button');
+        btn.addEventListener('click',foo);
+        function foo() { alert('hello'); }
+        btn.removeEventListener('click',foo);
+    /*var pEle = document.createElement('v');
+    var vtag = document.querySelector('v');
+        vtag.style.color = 'green';
+        vtag.style.fontSize = '50px';
+     var vsel = document.querySelector('v');
+    var strong = document.createElement('strong');
+    strong.textContent = 'Hello';
+     vsel.appendChild(strong);
+     vsel.removeChild(strong);
+     var em = document.createElement('em');
+var strong = document.querySelector('strong');
+var div = document.querySelector('div');
+em.textContent = 'hi';
+div.replaceChild(em, strong);
+var strong = document.querySelector('strong');
+var copy = strong.cloneNode(true);
+var div = document.querySelector('div');
+div.appendChild(copy);*/
+/*
+var em1 = document.createElement('em1');
+var strong = document.querySelector('strong');
+var div1 = document.querySelector('div');
+em1.textContent = 'hi111';
+div1.insertBefore(em1, strong);*/
+/*
+var table = document.querySelector("table");
+var df = document.createDocumentFragment();
+ 
+for(var i=0; i<5; i++) {
+  var td = document.createElement("td");
+  var tr = document.createElement("tr");
+  td.textContent = i;
+  tr.appendChild(td)
+  df.appendChild(tr);
+}
+ 
+table.appendChild(df);
+*/
+/*
+var style = getComputedStyle(document.querySelector('div'));
+alert(style.width);
+*//*
+var div = document.querySelector('div');
+div.setAttribute('contenteditable', '')*/
+/*var div = document.querySelector('div');
+alert(div.getAttribute('contenteditable'))*/
+var div = document.querySelector('div');
+div.removeAttribute('contenteditable');
+    </script>
+</body>
+</html>
+

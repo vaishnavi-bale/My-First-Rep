@@ -1,0 +1,27 @@
+<html> 
+   
+   <head> 
+      <title>User-defined objects</title> 
+       
+   </head> 
+   
+   <body> 
+    <script type = "text/javascript"> 
+        function movie(title, hero){  
+           this.title = title;  
+           this.hero = hero;  
+        }  
+     </script>
+      <script type = "text/javascript"> 
+         var myMovie = new movie("AAAA", "BBB"); 
+         document.write(myMovie.toSource()); 
+        /* movie.prototype.price = null;  
+         myMovie.price = 100;  */
+         document.write("Movie title is : " + myMovie.title + "<br>");  
+         document.write("Movie hero is : " + myMovie.hero + "<br>");  
+        /* document.write("Movie price is : " + myMovie.price + "<br>"); */
+        
+      </script> 
+   </body>
+   
+</html>  
