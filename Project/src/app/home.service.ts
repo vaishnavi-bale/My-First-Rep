@@ -18,4 +18,10 @@ export class HomeService {
   deleteUser(id: number): Observable<User> {
     return this.httpClient.delete<User>(this.httpUrl + '/' + id);
   }
+  updateUser(user: User):Observable<User>{
+    return this.httpClient.put<User>(this.httpUrl +user.id ,user);
+    }
+    getUserById(id: number):Observable<User>{
+      return this.httpClient.get<User>(this.httpUrl+id);
+    }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from '../home.service';
 import { User } from '../models/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -9,7 +10,7 @@ import { User } from '../models/user';
 })
 export class UserComponent implements OnInit {
   users:User[];
-  constructor(private homeService: HomeService) { }
+  constructor(private homeService: HomeService,private router: Router) { }
   
   ngOnInit() {
     
@@ -20,5 +21,10 @@ export class UserComponent implements OnInit {
   deleteUser(user: User){
     this.homeService.deleteUser(user.id).subscribe();
     this.users=this.users.filter(u => u !== user );
+  }
+  updateUser(user: User){
+    localStorage.removeItem('userId');
+    localStorage.setItem('userId',user.id.toString());
+    this.router.navigate(['update'])
   }
   }

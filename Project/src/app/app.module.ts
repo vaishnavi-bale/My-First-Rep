@@ -11,7 +11,9 @@ import { SignupComponent } from './admin/signup/signup.component';
 import { CompanyComponent } from './admin/company/company.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { UserComponent } from './user/user.component';
-import { HomeComponent } from './home/home.component'
+import { HomeComponent } from './home/home.component';
+import { UpdateComponent } from './update/update.component';
+import { CompanylistComponent } from './company/companylist/companylist.component'
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { HomeComponent } from './home/home.component'
     SignupComponent,
     CompanyComponent,
     UserComponent,
-    HomeComponent
+    HomeComponent,
+    UpdateComponent,
+    CompanylistComponent
   ],
   imports: [
     BrowserModule,

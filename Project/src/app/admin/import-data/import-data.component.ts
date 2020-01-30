@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-import-data',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./import-data.component.css']
 })
 export class ImportDataComponent implements OnInit {
-
-  constructor() { }
+   uploadFile: FormGroup
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.uploadFile=this.formBuilder.group({
+      file:['']
+    })
   }
 
 }

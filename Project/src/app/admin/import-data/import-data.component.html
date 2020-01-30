@@ -1,10 +1,12 @@
-<div class="text-primary text-center" style="width:auto;">
-    <a href="main.html" class="float-right">Log Out</a>
-<h1>Import Data</h1><br><br>
-</div>
-<div class="text-center">
-<label for="file" class="text-primary text-center">Select Excel File To Be Uploaded : </label>
-<input type="text" id="file">
-<button type="Browse" class="btn btn-primary">Browse</button><br><br>
-<button type="Upload" class="btn btn-primary">Upload</button>
+<h2 class="display-3 text-center my-3">Upload Excel</h2>
+<div class="container text-center">
+    <form [formGroup]="uploadFile" class="custom-file w-50">
+        <div class="formGroup">
+            <input type="file" formControlName="file" class="formControl custom-file-input ">
+            <label class="custom-file-label" for="customFile">Choose file</label>
+        </div>
+        <div class="float-right mt-2">
+            <button type="Upload" class="btn btn-primary">Upload</button>
+        </div>
+    </form>
 </div>

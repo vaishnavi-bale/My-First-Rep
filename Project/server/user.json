@@ -2,7 +2,7 @@
   "user": [
     {
       "id": "101",
-      "fullName": "vaishnavi",
+      "fullName": "vaishnavi b",
       "email": "vaishnavi@gmail.com",
       "phoneNumber": 6816216546,
       "userName": "vaishu",
@@ -31,14 +31,6 @@
       "phoneNumber": 465354651,
       "userName": "vish",
       "password": "kolimim"
-    },
-    {
-      "id": 107,
-      "fullName": "Guru",
-      "email": "guru@gmail.com",
-      "phoneNumber": 4564654141,
-      "userName": "guru7",
-      "password": "nknlkmnlk"
     }
   ]
 }

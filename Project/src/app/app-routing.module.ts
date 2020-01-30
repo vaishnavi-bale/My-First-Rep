@@ -5,6 +5,10 @@ import { SignupComponent } from './admin/signup/signup.component';
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { HomeComponent } from './home/home.component';
+import { MainComponent } from './admin/main/main.component';
+import { ImportDataComponent } from './admin/import-data/import-data.component';
+import { CompanyComponent } from './admin/company/company.component';
+import { UpdateComponent } from './update/update.component';
 
 const routes: Routes = [
 { path: '',redirectTo:'home',pathMatch:'full'}, 
@@ -12,6 +16,10 @@ const routes: Routes = [
 { path: 'login', component: LoginComponent},
 { path: 'signup', component: SignupComponent},
 { path:'home',component: HomeComponent},
+{path : 'main',component: MainComponent},
+{path : 'import-data',component:ImportDataComponent},
+{path: 'company',component:CompanyComponent},
+{ path :'update',component:UpdateComponent},
 { path: ' ',component:AppComponent}
 ];
 
