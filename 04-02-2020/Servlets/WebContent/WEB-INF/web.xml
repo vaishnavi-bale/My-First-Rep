@@ -1,0 +1,13 @@
+<web-app>
+<!-- Servlet Registration -->
+  <servlet>
+      <servlet-name>HelloServlet</servlet-name>
+      <servlet-class>com.cts.servlet.controller.HelloServlet</servlet-class>
+  </servlet>
+  
+  <!-- Servlet Mapping> -->
+  <servlet-mapping>
+       <servlet-name>HelloServlet</servlet-name>
+       <url-pattern>/hello</url-pattern>
+   </servlet-mapping>
+</web-app>
