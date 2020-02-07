@@ -2,6 +2,8 @@ package com.cts.middleware.model;
 
 import java.io.Serializable;
 
+import org.springframework.stereotype.Component;
+//@Component
 public class UserEntity implements Serializable {
 
 	private static final long serialVersionUID = -3639786997674484737L;
@@ -11,12 +13,14 @@ private String password;
 private String email;
 private long phone;
 private boolean enabled;
+private AddressEntity addressEntity;
 
 public UserEntity(){
 	
 }
 
-public UserEntity(int id, String username, String password, String email, long phone, boolean enabled) {
+public UserEntity(int id, String username, String password, String email, long phone, boolean enabled,
+		AddressEntity addressEntity) {
 	super();
 	this.id = id;
 	this.username = username;
@@ -24,7 +28,9 @@ public UserEntity(int id, String username, String password, String email, long p
 	this.email = email;
 	this.phone = phone;
 	this.enabled = enabled;
+	this.addressEntity = addressEntity;
 }
+
 
 public int getId() {
 	return id;
@@ -72,6 +78,15 @@ public boolean enabled() {
 
 public void setEnabled(boolean isEnabled) {
 	this.enabled = enabled;
+}
+
+
+public AddressEntity getAddressEntity() {
+	return addressEntity;
+}
+
+public void setAddressEntity(AddressEntity addressEntity) {
+	this.addressEntity = addressEntity;
 }
 
 @Override

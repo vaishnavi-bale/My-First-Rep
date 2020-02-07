@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+   <!--  <bean id="address" class="com.cts.middleware.model.AddressEntity"
+    p:id="201" p:houseNumber="A-56" p:street="Street No.5" p:city="Delhi" p:state="New Delhi"></bean>
+    
+    <bean id="user" class="com.cts.middleware.model.UserEntity"
+    p:id="2111" p:username="user123" p:password="user$123" p:email="user@gmail.com" p:phone="5548346" p:enabled="true" p:addressEntity-ref="address" /> -->
+
+   <bean id="address" class="com.cts.middleware.model.AddressEntity"
+   c:id="201" c:houseNumber="A-56" c:street="Street No.-5" c:city="Hyderabad" c:state="Telangana" />
+   
+   <bean id="user" class="com.cts.middleware.model.UserEntity"
+    c:id="2111" c:username="user123" c:password="user$123" c:email="user@gmail.com" c:phone="5548346" c:enabled="true" c:addressEntity-ref="address" />
+   
+</beans>

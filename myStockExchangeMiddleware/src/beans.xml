@@ -10,12 +10,29 @@
     <property name="phone" value="65569456459" />
     <property name="enabled" value="true" /> -->
     
-    <constructor-arg value="102" name="id" type="int" />
+<!--     <constructor-arg value="102" name="id" type="int" />
     <constructor-arg value="user" name="username" />
     <constructor-arg value="password" name="password" />
     <constructor-arg value="user@gmail.com" name="email" />
     <constructor-arg value="5635365" name="phone" />
-    <constructor-arg value="true" name="enabled" />
+    <constructor-arg value="true" name="enabled" /> -->
+    
+    <property name="id" value="101"/>
+    <property name="username" value="admin" />
+    <property name="password" value="admin@123" />
+    <property name="email" value="admin@gmail.com" />
+    <property name="phone" value="65569456459" />
+    <property name="enabled" value="true" />
+    <property name="addressEntity">
+    <bean name="address" class="com.cts.middleware.model.AddressEntity">
+       <property name="id" value="1001"/>
+       <property name="houseNumber" value="S-123"/>
+       <property name="city" value="Hyderabad"/>
+       <property name="state" value="Telangana" />
+       <property name="street" value="Street No.9" />
+    </bean>
+    </property>
+    
     </bean>
 
 </beans>
