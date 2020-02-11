@@ -8,8 +8,11 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.stereotype.Component;
+
 @Entity
-@Table
+
+@Component
 public class StockPrice implements Serializable {
 
 	private static final long serialVersionUID = 4361765948952898725L;

@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.cts.project.dao.StockExchangeDAO;
 import com.cts.project.model.StockPrice;
-import com.cts.project.model.User;
+
 
 @Transactional
 @Repository(value="stockpriceDAO")
