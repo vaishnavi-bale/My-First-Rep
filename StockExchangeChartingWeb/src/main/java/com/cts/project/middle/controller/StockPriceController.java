@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.cts.project.dao.StockPriceDAO;
 import com.cts.project.model.StockPrice;
-import com.cts.project.model.User;
+
 
 @Controller
 public class StockPriceController {
@@ -28,14 +28,24 @@ public class StockPriceController {
 	}
 	@PostMapping("/stockprice/save-stockprice")  //anyone can be written postmapping or requestmapping.
 	public String addStockPrice(@ModelAttribute("stockprice") StockPrice stockPrice) {
-		stockPriceDAO.saveStockPrice(stockPrice);
+		stockPriceDAO.saveOrUpdateStockPrice(stockPrice);
 		return "redirect:/stock-home";
 	}
-//	@GetMapping("/remove/{id}") //{}-path varaiable
-//	public String deleteUser(@PathVariable("id") int id) {
-//		User user=stockPriceDAO.getUserById(id);
-//		stockPriceDAO.deleteUser(user);
-//		return "redirect:/user-home";
-//		
-//	}
+	@GetMapping("/remove-stockprice/{companyCode}") //{}-path varaiable
+	public String deleteStockPrice(@PathVariable("companyCode") int companyCode) {
+		StockPrice stockPrice=stockPriceDAO.getStockPriceByCode(companyCode);
+		stockPriceDAO.saveOrUpdateStockPrice(stockPrice);
+		return "redirect:/stock-home";
+		
+	}
+	@GetMapping("/update-stockprice/{companyCode}")
+	public String updateStockPrice(@PathVariable("companyCode") int companyCode,Model model) {
+		
+		StockPrice stockPrice=stockPriceDAO.getStockPriceByCode(companyCode);
+		model.addAttribute("stockprice", stockPrice);
+		List<StockPrice>  stocks=stockPriceDAO.getAllStockPrice();
+		model.addAttribute("list", stocks);
+
+		return "stockprices";
+	}
 }

@@ -13,33 +13,42 @@
 <body>
 	<c:url var="stockpriceUrl" value="/stockprice/save-stockprice"></c:url>
 	<form:form action="${stockpriceUrl }" modelAttribute="stockprice">
-		<div>
-			<table>
-				<tr>
-					<td><form:label path="companyCode">CompanyCode</form:label></td>
-					<td><form:input path="companyCode" /></td>
-				</tr>
-				<tr>
-					<td><form:label path="currentPrice">Current Price</form:label></td>
-					<td><form:input path="currentPrice" /></td>
-				</tr>
-				<tr>
-					<td><form:label path="date">Date</form:label></td>
-					<td><form:input type="date" path="date" /></td>
-				</tr>
-				<tr>
-					<td><form:label path="stockExchange">StockExchange</form:label></td>
-					<td><form:input path="stockExchange" /></td>
-				</tr>
-				<tr>
-					<td><form:label path="time">Time</form:label></td>
-					<td><form:input path="time" /></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td><input type="submit" value="Register"></td>
-				</tr>
-			</table>
+		<div class="container-fluid">
+		<c:if test="${!empty stockprice.stockExchange }">
+				<div class="form-group">
+					<form:label path="companyCode">CompanyCode</form:label>
+					<form:input path="companyCode" readonly="true" disabled="true"
+						class="form-control" />
+					<form:hidden path="companyCode" />
+				</div>
+			</c:if>
+				
+				<div class="form-group">
+				<form:label path="currentPrice">Current Price</form:label>
+				<form:input path="currentPrice" class="form-control"/>
+				</div>
+				<div class="form-group">
+					<form:label path="date">Date</form:label>
+					<form:input path="date" class="form-control"/>
+				</div>
+				<div class="form-group">
+					<form:label path="stockExchange">StockExchange</form:label>
+					<form:input path="stockExchange" class="form-control"/>
+				</div>
+				<div class="form-group">
+					<form:label path="time">Time</form:label>
+			        <form:input path="time" class="form-control"/>
+				</div>
+				<div class="form-group">
+					<c:if test="${empty stockprice.stockExchange}">
+					<input type="submit" value="Register">
+				</c:if>
+				<c:if test="${!empty stockprice.stockExchange}">
+					<input type="submit" value="Update">
+				</c:if>
+
+				</div>
+			
 		</div>
 	</form:form>
 	<br />
@@ -52,6 +61,7 @@
 				<th>Date</th>
 				<th>StockExchange</th>
 				<th>Time</th>
+				<th>Actions</th>
 
 			</tr>
 			<c:forEach var="stockprice" items="${list}">
@@ -61,7 +71,8 @@
 					<td>${stockprice.date}</td>
 					<td>${stockprice.stockExchange}</td>
 					<td>${stockprice.time}</td>
-
+                    <td><a href="<c:url value='/remove-stockprice/{companyCode}' />">Remove</a>|
+						 <a href="<c:url value='/update-stockprice/{companyCode}' />">Update</a></td>
 				</tr>
 			</c:forEach>
 

@@ -34,15 +34,14 @@ public class HomeController {
 	@RequestMapping("/index")
 	public String indexPage(Model model) {
 		model.addAttribute("message", "Welcome to spring MVC");
-//        List<String> names= new ArrayList<String>();
+        List<String> names= new ArrayList<String>();
 //        addNames(names);
-//      model.addAttribute("list", names);
-//    	List<User>  users=userDAO.getAllUsers();
-//    	model.addAttribute("list", users);
+      model.addAttribute("list", names);
+    	List<User>  users=userDAO.getAllUsers();
+    	model.addAttribute("list", users);
 
 		return "index";
 	}
-
 	@RequestMapping("/user")
 	public String userPage(Model model) {
 		List<User> users = userDAO.getAllUsers();

@@ -1,28 +1,26 @@
 <%@ page isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ include file="header.jsp" %>
+<%@ include file="header.jsp"%>
 
-<html>
-<body>
-	<h2>Hello This is a Maven Project</h2>
-	<hr>
-	${message}
-	<hr>
-	<a href="user-home">User</a>
-	<br />
-	<a href="stock-home">Stock Price</a>
-	<br />
-	<a href="company-data">Company</a>
-	
-	<%-- 
+<h2>Hello This is a Maven Project</h2>
+<hr>
+${message}
+<hr>
+<a href="user-home">User</a>
+<br />
+<a href="stock-home">Stock Price</a>
+<br />
+<a href="company-data">Company</a>
+
+<%-- 
 	<ol>
 		<c:forEach var="name" items="${list}">
 
 			<li><h3>${name}</h3></li>
 
 		</c:forEach>
-	</ol> --%>
-	<%-- 
+	</ol>
+
 	<table border="1">
 	  <tr>
 	      <th>ID</th>
@@ -43,6 +41,6 @@
        </tr>
 		</c:forEach>
 	 
-	</table> --%>
+	</table>
 </body>
-</html>
+</html> --%>

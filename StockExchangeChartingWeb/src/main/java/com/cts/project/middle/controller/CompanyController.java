@@ -22,6 +22,7 @@ public class CompanyController {
 	public String companyPage(Model model) {
 		List<Company>  company=companyDAO.getAllCompany();
     	model.addAttribute("list", company);
+    	model.addAttribute("company", new Company());
 		return "companies";
 	}
 	
@@ -31,4 +32,5 @@ public class CompanyController {
 		companyDAO.saveCompany(company);
 		return "redirect:/company-home";
 	}
+
 }
