@@ -1,0 +1,76 @@
+delimiter $$
+create procedure p11(in a integer)
+begin
+if a%2=0 then
+select 'even no';
+else
+select 'odd no';
+end if;
+end $$ delimiter;
+set @n=21;
+call p1(@n);
+
+
+
+delimiter $$
+create procedure pdept(in dno int)
+begin
+declare cnt int;
+select count(*)  into cnt from emp where deptid=dno;
+select cnt;
+end $$ 
+delimiter ;
+
+
+delimiter $$
+create procedure pdept2(in dnm varchar(20),out cnt integer)
+begin 
+select count(*) into cnt from emp where deptid=(select id from dept where name=dnm);
+end $$
+delimiter ;
+
+
+delimiter $$
+create function f1(eid int)returns varchar(20)
+begin
+declare nm varchar(20);
+select name into nm from emp where id=eid;
+return nm;
+end $$
+delimiter ;
+
+
+delimiter $$
+create function f3(eid int)returns varchar(20)
+begin
+declare nm varchar(20);
+select name into nm from dept where id=(select deptid from emp where deptid=eid);
+return nm;
+end $$
+delimiter ;
+
+
+
+delimiter $$
+create procedure assignment1(in eid int,out name varchar(20),out did int )
+begin
+select id into did from dept where id=eid;
+select name into name from emp where deptid=did;
+end $$
+delimeter ;
+
+delimiter $$
+ create procedure pa(in eid int,out ename varchar(20),out dname varchar(20))
+ begin
+  select name into ename from emp where id=eid;
+  select name into dname from dept where id=(select deptid from emp where id=eid);
+  end $$
+
+delimiter $$
+create trigger sat
+after delete
+on emp for each row
+begin 
+insert into emp_deleted values(old.id,old.name,old.salary,old.deptid);
+end $$
+delimiter ;
