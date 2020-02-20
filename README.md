@@ -188,3 +188,6 @@ triggers
 
 ##19-02-2020:work:
 spring rest and spring boot started
+
+##20-02-2020:work:
+spring boot continued
