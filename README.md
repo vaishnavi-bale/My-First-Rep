@@ -191,3 +191,6 @@ spring rest and spring boot started
 
 ##20-02-2020:work:
 spring boot continued
+
+##24-02-2020:work:
+integration of front-end and back-end
