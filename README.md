@@ -197,3 +197,6 @@ integration of front-end and back-end
 
 ##03-03-2020
 microservices, eureka.
+
+##05-03-2020
+fiegnclient,api-gatewayfilter,zuul gateway.
