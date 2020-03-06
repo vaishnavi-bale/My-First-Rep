@@ -200,3 +200,6 @@ microservices, eureka.
 
 ##05-03-2020
 fiegnclient,api-gatewayfilter,zuul gateway.
+
+##06-03-2020
+docker
